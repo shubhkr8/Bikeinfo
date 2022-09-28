@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Bikeinfo/static/css/main.11026c12.css",
+    "main.js": "/Bikeinfo/static/js/main.7e23bfaa.js",
+    "static/media/default_bike.jpg": "/Bikeinfo/static/media/default_bike.aba18be52652eeedbb51.jpg",
+    "index.html": "/Bikeinfo/index.html",
+    "main.11026c12.css.map": "/Bikeinfo/static/css/main.11026c12.css.map",
+    "main.7e23bfaa.js.map": "/Bikeinfo/static/js/main.7e23bfaa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11026c12.css",
+    "static/js/main.7e23bfaa.js"
+  ]
+}
