@@ -1,0 +1,52 @@
+.navbar {
+  background-color: beige;
+  color: darkblue;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar_logo {
+  margin-left: 20px;
+  color: chocolate;
+}
+
+.logo_up {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.navbar_search {
+  position: relative;
+  right: 20px;
+  background-color: whitesmoke;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  height: 70%;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+
+.navbar_search > label {
+  font-weight: bold;
+  margin: 0 10px;
+}
+.navbar_search > input {
+  outline: none;
+  border: none;
+  background: white;
+  height: inherit;
+}
+
+.input_within {
+  width: 80px;
+}
+
+.input_location {
+  min-width: 200px;
+  margin-right: 10px;
+}
