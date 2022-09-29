@@ -6,9 +6,10 @@
 }
 
 .count_container {
-  margin: 10px auto 0;
+  margin: 10px auto;
   background-color: beige;
   color: black;
+  text-align: center;
 }
 
 .bikes_container {

@@ -8,8 +8,63 @@
 }
 
 .filter_container {
+  display: flex;
+  align-items: center;
+}
+
+.filter_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: blueviolet;
+  margin: 0 40px;
+}
+
+.filter_title > label {
+  margin: 10px 0;
+}
+
+.filter_date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: blueviolet;
+}
+
+.filter_date > label {
+  margin: 10px 0;
+}
+
+.filter_date_container {
+  display: flex;
+  color: black;
+}
+
+.filter_date_container > label,
+input {
+  margin: 0 10px;
+}
+
+.filter_submit {
+  height: 80%;
+  margin: 0 40px;
+}
+/* 
+.filter_body {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
+
+.filter_title > label {
+  font-weight: bold;
+  color: blueviolet;
+}
+
+.filter_date > label {
+  font-weight: bold;
+  color: blueviolet;
+} */

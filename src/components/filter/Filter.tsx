@@ -20,13 +20,15 @@ const Filter: FC = () => {
           e.date_stolen * 1000 >= newfromdate &&
           e.date_stolen * 1000 <= newtodate
         );
-      } else if (!searchTitle) {
+      } else if (!searchTitle && newfromdate && newtodate) {
         return (
           e.date_stolen * 1000 >= newfromdate &&
           e.date_stolen * 1000 <= newtodate
         );
-      } else if (!newfromdate && !newtodate) {
+      } else if (!newfromdate && !newtodate && searchTitle) {
         return e.title.includes(searchTitle);
+      } else {
+        return bikeData;
       }
     });
     setNewBikeData(filterbikedata);
@@ -39,42 +41,44 @@ const Filter: FC = () => {
       <div className="filter_heading">
         <h3>Filters</h3>
       </div>
-      <form className="filter_container">
-        <div>
-          <label>Filter By Date :</label>
-          <input
-            type="text"
-            placeholder="Enter Title"
-            value={searchTitle}
-            onChange={(e) => setSearchTitle(e.target.value)}
-            required
-          />
-        </div>
-
-        <label>Filter By Date :</label>
-        <div>
-          <label>From</label>
-          <input
-            type="date"
-            onChange={(e) => setFromDate(e.target.value)}
-            value={fromDate}
-            required
-          />
-        </div>
-        <div>
-          <label>To</label>
-          <input
-            type="date"
-            onChange={(e) => setToDate(e.target.value)}
-            value={toDate}
-            required
-          />
-        </div>
-
-        <Button size="small" variant="outlined" onClick={handleSearchTitle}>
-          Search
-        </Button>
-      </form>
+      <div className="filter_body">
+        <form className="filter_container">
+          <div className="filter_title">
+            <label>Filter By Title :</label>
+            <input
+              type="text"
+              placeholder="Enter Title"
+              value={searchTitle || ""}
+              onChange={(e) => setSearchTitle(e.target.value)}
+              required
+            />
+          </div>
+          <div className="filter_date">
+            <label>Filter By Date :</label>
+            <div className="filter_date_container">
+              <label>From</label>
+              <input
+                type="date"
+                onChange={(e) => setFromDate(e.target.value)}
+                value={fromDate || ""}
+                required
+              />
+              <label>To</label>
+              <input
+                type="date"
+                onChange={(e) => setToDate(e.target.value)}
+                value={toDate || ""}
+                required
+              />
+            </div>
+          </div>
+          <div className="filter_submit">
+            <Button size="small" variant="outlined" onClick={handleSearchTitle}>
+              Search
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

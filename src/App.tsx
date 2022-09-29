@@ -32,18 +32,18 @@ const App: FC = () => {
       .then((response: any) => {
         setBikeData(response.data.bikes);
         setNewBikeData(response.data.bikes);
+        setShowLoader(false);
       })
       .catch((err: any) => {
         console.log(err);
       });
-    setShowLoader(false);
   };
   const getCount = () => {
     axios("https://bikeindex.org/api/v3/search/count", {
       params: apiCountParam,
     })
       .then((response: CountApiParam) => {
-        if (response.data.proximity == 0) {
+        if (response.data.proximity === 0) {
           setTotalCount(1);
         } else {
           setTotalCount(response.data.proximity);

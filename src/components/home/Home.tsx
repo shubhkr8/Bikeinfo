@@ -16,6 +16,7 @@ const Home: FC = () => {
     showCount,
     getData,
     getCount,
+    showLoader,
   } = useContext(UserContext);
   useEffect(() => {
     getData();
@@ -27,27 +28,40 @@ const Home: FC = () => {
   return (
     <div className="main_container">
       <Navbar />
-      {totalCount ? (
-        <div className="count_container">
-          {showCount ? (
-            <>
-              {totalCount} bikes stolen within {inputMiles} miles of{" "}
-              {inputLocation}
-            </>
-          ) : (
-            <>
-              {totalCount} bikes stolen within {inputMiles} miles of your
-              location
-            </>
-          )}
-        </div>
+      {showLoader ? (
+        <>
+          <Loader />
+        </>
       ) : (
-        ""
+        <>
+          <div className="bikes_container">
+            {newBikeData.length ? (
+              <>
+                {totalCount ? (
+                  <div className="count_container">
+                    {showCount ? (
+                      <>
+                        {totalCount} bikes stolen within {inputMiles} miles of{" "}
+                        {inputLocation}
+                      </>
+                    ) : (
+                      <>
+                        {totalCount} bikes stolen within {inputMiles} miles of
+                        your location
+                      </>
+                    )}
+                  </div>
+                ) : (
+                  ""
+                )}
+                <Stolenbikes />
+              </>
+            ) : (
+              <></>
+            )}
+          </div>
+        </>
       )}
-
-      <div className="bikes_container">
-        {!newBikeData.length ? <Loader /> : <Stolenbikes />}
-      </div>
     </div>
   );
 };
