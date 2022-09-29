@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/Bikeinfo/static/css/main.11026c12.css",
-    "main.js": "/Bikeinfo/static/js/main.7e23bfaa.js",
+    "main.css": "/Bikeinfo/static/css/main.f3d092e1.css",
+    "main.js": "/Bikeinfo/static/js/main.9c36dd0c.js",
     "static/media/default_bike.jpg": "/Bikeinfo/static/media/default_bike.aba18be52652eeedbb51.jpg",
+    "static/media/loading_icon.gif": "/Bikeinfo/static/media/loading_icon.1a32f552ee5280e2aef9.gif",
     "index.html": "/Bikeinfo/index.html",
-    "main.11026c12.css.map": "/Bikeinfo/static/css/main.11026c12.css.map",
-    "main.7e23bfaa.js.map": "/Bikeinfo/static/js/main.7e23bfaa.js.map"
+    "main.f3d092e1.css.map": "/Bikeinfo/static/css/main.f3d092e1.css.map",
+    "main.9c36dd0c.js.map": "/Bikeinfo/static/js/main.9c36dd0c.js.map"
   },
   "entrypoints": [
-    "static/css/main.11026c12.css",
-    "static/js/main.7e23bfaa.js"
+    "static/css/main.f3d092e1.css",
+    "static/js/main.9c36dd0c.js"
   ]
 }
