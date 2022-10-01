@@ -7,7 +7,7 @@ import "./Navbar.css";
 const Navbar: FC = () => {
   const [location, setLocation] = useState("");
   const [miles, setMiles] = useState("200");
-  const enabled = location.length > 0;
+  const enabled = location.length === 0 || miles.length === 0;
 
   const {
     apiDataParam,
@@ -20,16 +20,24 @@ const Navbar: FC = () => {
   } = useContext(UserContext);
 
   const handleSearch = () => {
-    setInputMiles(miles);
-    setInputLocation(location);
-    setShowCount(true);
-    setApiDataParam({
-      ...apiDataParam,
-      location: location,
-      distance: miles,
-    });
-    setApiCountParam({ ...apiCountParam, location: location, distance: miles });
-    setLocation("");
+    if (Number(miles) <= 0) {
+      alert("Please Enter Miles Value Greater than 0");
+    } else {
+      setInputMiles(miles);
+      setInputLocation(location);
+      setShowCount(true);
+      setApiDataParam({
+        ...apiDataParam,
+        location: location,
+        distance: miles,
+      });
+      setApiCountParam({
+        ...apiCountParam,
+        location: location,
+        distance: miles,
+      });
+      setLocation("");
+    }
   };
 
   return (
@@ -45,6 +53,7 @@ const Navbar: FC = () => {
           type="number"
           value={miles}
           onChange={(e) => setMiles(e.target.value)}
+          min="1"
         />
         <label>miles of</label>
         <input
@@ -58,7 +67,7 @@ const Navbar: FC = () => {
           size="small"
           variant="contained"
           onClick={handleSearch}
-          disabled={!enabled}
+          disabled={enabled}
         >
           <SearchIcon />
         </Button>

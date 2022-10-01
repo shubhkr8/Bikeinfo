@@ -58,14 +58,14 @@ const Home: FC = () => {
                       )}
                     </div>
                   ) : (
-                    ""
+                    <h3>{totalCount} Bikes Stolen</h3>
                   )}
                   <Stolenbikes />
                 </>
               ) : (
-                <>
+                <div className="no_bikedata">
                   <h1>No Data Found</h1>
-                </>
+                </div>
               )}
             </div>
           )}
