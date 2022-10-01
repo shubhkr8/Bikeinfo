@@ -4,6 +4,9 @@ import { UserContext } from "../../App";
 import Navbar from "../navbar/Navbar";
 import Stolenbikes from "../bikes/Stolenbikes";
 import Loader from "../loader/Loader";
+import Filter from "../filter/Filter";
+import Paginations from "../pagination/Paginations";
+import Error from "../Error/Error";
 
 const Home: FC = () => {
   const {
@@ -17,6 +20,7 @@ const Home: FC = () => {
     getData,
     getCount,
     showLoader,
+    showApiError,
   } = useContext(UserContext);
   useEffect(() => {
     getData();
@@ -29,37 +33,42 @@ const Home: FC = () => {
     <div className="main_container">
       <Navbar />
       {showLoader ? (
-        <>
-          <Loader />
-        </>
+        <Loader />
       ) : (
         <>
-          <div className="bikes_container">
-            {newBikeData.length ? (
-              <>
-                {totalCount ? (
-                  <div className="count_container">
-                    {showCount ? (
-                      <>
-                        {totalCount} bikes stolen within {inputMiles} miles of{" "}
-                        {inputLocation}
-                      </>
-                    ) : (
-                      <>
-                        {totalCount} bikes stolen within {inputMiles} miles of
-                        your location
-                      </>
-                    )}
-                  </div>
-                ) : (
-                  ""
-                )}
-                <Stolenbikes />
-              </>
-            ) : (
-              <></>
-            )}
-          </div>
+          {showApiError ? (
+            <Error />
+          ) : (
+            <div className="bikes_container">
+              <Filter />
+              {newBikeData.length ? (
+                <>
+                  {totalCount ? (
+                    <div className="count_container">
+                      {showCount ? (
+                        <>
+                          {totalCount} bikes stolen within {inputMiles} miles of{" "}
+                          {inputLocation}
+                        </>
+                      ) : (
+                        <>
+                          {totalCount} bikes stolen within {inputMiles} miles of
+                          your location
+                        </>
+                      )}
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  <Stolenbikes />
+                </>
+              ) : (
+                <>
+                  <h1>No Data Found</h1>
+                </>
+              )}
+            </div>
+          )}
         </>
       )}
     </div>

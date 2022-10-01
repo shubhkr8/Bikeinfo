@@ -7,10 +7,12 @@ export const UserContext = React.createContext<AppContextInterface | any>(null);
 
 const App: FC = () => {
   const [bikeData, setBikeData] = useState([]);
+  const [showApiError, setShowApiError] = useState(false);
+  const [apiError, setApiError] = useState("");
   const [inputLocation, setInputLocation] = useState("IP");
   const [inputMiles, setInputMiles] = useState(200);
   const [newBikeData, setNewBikeData] = useState([]);
-  const [totalCount, setTotalCount] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
   const [showCount, setShowCount] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const [apiDataParam, setApiDataParam] = useState({
@@ -28,6 +30,8 @@ const App: FC = () => {
 
   const getData = () => {
     setShowLoader(true);
+    setShowApiError(false);
+    setApiError("");
     axios("https://bikeindex.org/api/v3/search", { params: apiDataParam })
       .then((response: any) => {
         setBikeData(response.data.bikes);
@@ -35,7 +39,9 @@ const App: FC = () => {
         setShowLoader(false);
       })
       .catch((err: any) => {
-        console.log(err);
+        setApiError(err.message);
+        setShowLoader(false);
+        setShowApiError(true);
       });
   };
   const getCount = () => {
@@ -43,11 +49,7 @@ const App: FC = () => {
       params: apiCountParam,
     })
       .then((response: CountApiParam) => {
-        if (response.data.proximity === 0) {
-          setTotalCount(1);
-        } else {
-          setTotalCount(response.data.proximity);
-        }
+        setTotalCount(response.data.proximity);
       })
       .catch((err: any) => {
         console.log(err);
@@ -77,6 +79,8 @@ const App: FC = () => {
         setShowLoader,
         getData,
         getCount,
+        showApiError,
+        apiError,
       }}
     >
       <Home />

@@ -1,15 +1,15 @@
 .filter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: white;
-  padding-bottom: 10px;
 }
 
 .filter_container {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+
+.filter_heading {
+  border-right: 1px solid black;
 }
 
 .filter_title {
@@ -18,11 +18,10 @@
   justify-content: center;
   align-items: center;
   color: blueviolet;
-  margin: 0 40px;
 }
 
 .filter_title > label {
-  margin: 10px 0;
+  margin-bottom: 2px;
 }
 
 .filter_date {
@@ -49,22 +48,4 @@ input {
 
 .filter_submit {
   height: 80%;
-  margin: 0 40px;
 }
-/* 
-.filter_body {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.filter_title > label {
-  font-weight: bold;
-  color: blueviolet;
-}
-
-.filter_date > label {
-  font-weight: bold;
-  color: blueviolet;
-} */

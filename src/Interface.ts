@@ -3,6 +3,10 @@ export interface AppContextInterface {
   setBikeData?: (x: Bike) => void;
   newBikeData?: Bike;
   setNewBikeData?: (x: Bike) => void;
+  showApiError?: boolean;
+  setShowApiError?: (x: boolean) => void;
+  apiError: string;
+  setApiError: (x: string) => void;
   apiDataParam?: ApiParam;
   setApiDataParam?: (x: ApiParam) => void;
   apiCountParam?: ApiParam;

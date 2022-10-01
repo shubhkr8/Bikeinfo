@@ -31,54 +31,55 @@ const Filter: FC = () => {
         return bikeData;
       }
     });
+
     setNewBikeData(filterbikedata);
+
     setSearchTitle("");
     setFromDate("");
     setToDate("");
   };
   return (
     <div className="filter">
-      <div className="filter_heading">
-        <h3>Filters</h3>
-      </div>
-      <div className="filter_body">
-        <form className="filter_container">
-          <div className="filter_title">
-            <label>Filter By Title :</label>
+      <form className="filter_container">
+        <div className="filter_heading">
+          <h3>Filters</h3>
+        </div>
+
+        <div className="filter_title">
+          <label>Filter By Title :</label>
+          <input
+            type="text"
+            placeholder="Enter Title"
+            value={searchTitle || ""}
+            onChange={(e) => setSearchTitle(e.target.value)}
+            required
+          />
+        </div>
+        <div className="filter_date">
+          <label>Filter By Date :</label>
+          <div className="filter_date_container">
+            <label>From</label>
             <input
-              type="text"
-              placeholder="Enter Title"
-              value={searchTitle || ""}
-              onChange={(e) => setSearchTitle(e.target.value)}
+              type="date"
+              onChange={(e) => setFromDate(e.target.value)}
+              value={fromDate || ""}
+              required
+            />
+            <label>To</label>
+            <input
+              type="date"
+              onChange={(e) => setToDate(e.target.value)}
+              value={toDate || ""}
               required
             />
           </div>
-          <div className="filter_date">
-            <label>Filter By Date :</label>
-            <div className="filter_date_container">
-              <label>From</label>
-              <input
-                type="date"
-                onChange={(e) => setFromDate(e.target.value)}
-                value={fromDate || ""}
-                required
-              />
-              <label>To</label>
-              <input
-                type="date"
-                onChange={(e) => setToDate(e.target.value)}
-                value={toDate || ""}
-                required
-              />
-            </div>
-          </div>
-          <div className="filter_submit">
-            <Button size="small" variant="outlined" onClick={handleSearchTitle}>
-              Search
-            </Button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div className="filter_submit">
+          <Button size="small" variant="outlined" onClick={handleSearchTitle}>
+            Filter
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

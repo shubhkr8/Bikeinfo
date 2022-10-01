@@ -9,11 +9,6 @@ const Stolenbikes: FC = () => {
   const { newBikeData } = useContext(UserContext);
   return (
     <div className="conatiner">
-      <Filter />
-      <div className="paginations">
-        <Paginations />
-      </div>
-
       {newBikeData.map((item: any) => {
         return (
           <Bikes

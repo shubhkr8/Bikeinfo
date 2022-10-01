@@ -7,6 +7,7 @@ import "./Navbar.css";
 const Navbar: FC = () => {
   const [location, setLocation] = useState("");
   const [miles, setMiles] = useState("200");
+  const enabled = location.length > 0;
 
   const {
     apiDataParam,
@@ -53,7 +54,12 @@ const Navbar: FC = () => {
           onChange={(e) => setLocation(e.target.value)}
           value={location}
         />
-        <Button size="small" variant="contained" onClick={handleSearch}>
+        <Button
+          size="small"
+          variant="contained"
+          onClick={handleSearch}
+          disabled={!enabled}
+        >
           <SearchIcon />
         </Button>
       </form>
