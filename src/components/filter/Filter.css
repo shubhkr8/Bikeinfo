@@ -1,39 +1,54 @@
 .filter {
   background-color: white;
-}
-
-.filter_container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.filter_container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .filter_heading {
-  border-right: 1px solid black;
+  border-right: 1px solid coral;
+  padding: 2px 10px;
+  color: #294057;
 }
 
-.filter_title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: blueviolet;
-}
-
-.filter_title > label {
-  margin-bottom: 2px;
-}
-
+.filter_title,
 .filter_date {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: blueviolet;
+  color: #294057;
 }
 
+.filter_title > label,
 .filter_date > label {
-  margin: 10px 0;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.filter_title > input,
+.to_date > input,
+.from_date > input {
+  outline: none;
+  border: none;
+  background: white;
+  height: 1.5rem;
+  box-shadow: inset 0px 0px 1px grey;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.filter_title > input:focus,
+.from_date > input:focus,
+.to_date > input:focus {
+  box-shadow: inset 0px 0px 4px grey;
 }
 
 .filter_date_container {
@@ -41,11 +56,25 @@
   color: black;
 }
 
-.filter_date_container > label,
-input {
-  margin: 0 10px;
-}
-
 .filter_submit {
   height: 80%;
+}
+
+.from_date,
+.to_date {
+  position: relative;
+}
+.from_date > label,
+.to_date > label {
+  font-size: 0.7rem;
+  position: absolute;
+  font-weight: bold;
+  top: -8px;
+  left: 4px;
+  padding: 0 4px;
+  background-color: white;
+}
+
+.from_date {
+  margin-right: 5px;
 }

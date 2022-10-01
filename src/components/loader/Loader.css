@@ -1,10 +1,10 @@
 .loader {
   display: flex;
   justify-content: center;
+  margin-top: 80px;
 }
 
-.loaderimg {
+.loader_img {
   object-fit: contain;
-  width: 200px;
-  height: 200px;
+  width: 40px;
 }
