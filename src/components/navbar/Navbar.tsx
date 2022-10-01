@@ -2,6 +2,7 @@ import { FC, useContext, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import { UserContext } from "../../App";
+import LogoImg from "../../images/bike_logo.png";
 import "./Navbar.css";
 
 const Navbar: FC = () => {
@@ -42,36 +43,39 @@ const Navbar: FC = () => {
 
   return (
     <div className="navbar">
-      <div className="navbar_logo">
-        <span className="logo_up">Bike</span>
-        <span className="logo_down">info</span>
+      <div className="nav_container">
+        <div className="navbar_logo">
+          <img src={LogoImg} className="bikeLogo" alt="" />
+          <span className="logo_up">Bike</span>
+          <span className="logo_down">info</span>
+        </div>
+        <form className="navbar_search">
+          <label>Search within</label>
+          <input
+            className="input_within"
+            type="number"
+            value={miles}
+            onChange={(e) => setMiles(e.target.value)}
+            min="1"
+          />
+          <label>miles of</label>
+          <input
+            className="input_location"
+            placeholder="Enter location"
+            type="text"
+            onChange={(e) => setLocation(e.target.value)}
+            value={location}
+          />
+          <Button
+            size="small"
+            variant="contained"
+            onClick={handleSearch}
+            disabled={enabled}
+          >
+            <SearchIcon />
+          </Button>
+        </form>
       </div>
-      <form className="navbar_search">
-        <label>Search within</label>
-        <input
-          className="input_within"
-          type="number"
-          value={miles}
-          onChange={(e) => setMiles(e.target.value)}
-          min="1"
-        />
-        <label>miles of</label>
-        <input
-          className="input_location"
-          placeholder="Enter location"
-          type="text"
-          onChange={(e) => setLocation(e.target.value)}
-          value={location}
-        />
-        <Button
-          size="small"
-          variant="contained"
-          onClick={handleSearch}
-          disabled={enabled}
-        >
-          <SearchIcon />
-        </Button>
-      </form>
     </div>
   );
 };

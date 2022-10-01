@@ -32,45 +32,47 @@ const Home: FC = () => {
   return (
     <div className="main_container">
       <Navbar />
-      {showLoader ? (
-        <Loader />
-      ) : (
-        <>
-          {showApiError ? (
-            <Error />
-          ) : (
-            <div className="bikes_container">
-              <Filter />
-              {newBikeData.length ? (
-                <>
-                  {totalCount ? (
-                    <div className="count_container">
-                      {showCount ? (
-                        <>
-                          {totalCount} bikes stolen within {inputMiles} miles of{" "}
-                          {inputLocation}
-                        </>
-                      ) : (
-                        <>
-                          {totalCount} bikes stolen within {inputMiles} miles of
-                          your location
-                        </>
-                      )}
-                    </div>
-                  ) : (
-                    <h3>{totalCount} Bikes Stolen</h3>
-                  )}
-                  <Stolenbikes />
-                </>
-              ) : (
-                <div className="no_bikedata">
-                  <h1>No Data Found</h1>
-                </div>
-              )}
-            </div>
-          )}
-        </>
-      )}
+      <div className="main_body">
+        {showLoader ? (
+          <Loader />
+        ) : (
+          <>
+            {showApiError ? (
+              <Error />
+            ) : (
+              <div className="bikes_container">
+                <Filter />
+                {newBikeData.length ? (
+                  <>
+                    {totalCount ? (
+                      <div className="count_container">
+                        {showCount ? (
+                          <>
+                            {totalCount} bikes stolen within {inputMiles} miles
+                            of {inputLocation}
+                          </>
+                        ) : (
+                          <>
+                            {totalCount} bikes stolen within {inputMiles} miles
+                            of your location
+                          </>
+                        )}
+                      </div>
+                    ) : (
+                      <h3>{totalCount} Bikes Stolen</h3>
+                    )}
+                    <Stolenbikes />
+                  </>
+                ) : (
+                  <div className="no_bikedata">
+                    <h1>No Data Available For Given Input</h1>
+                  </div>
+                )}
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 };
