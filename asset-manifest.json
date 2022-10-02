@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/Bikeinfo/static/css/main.f3d092e1.css",
-    "main.js": "/Bikeinfo/static/js/main.9c36dd0c.js",
-    "static/media/default_bike.jpg": "/Bikeinfo/static/media/default_bike.aba18be52652eeedbb51.jpg",
-    "static/media/loading_icon.gif": "/Bikeinfo/static/media/loading_icon.1a32f552ee5280e2aef9.gif",
+    "main.css": "/Bikeinfo/static/css/main.9f1940a2.css",
+    "main.js": "/Bikeinfo/static/js/main.691d0376.js",
+    "static/media/loading_icon.gif": "/Bikeinfo/static/media/loading_icon.4ace5f172a45b15a8274.gif",
+    "static/media/bike_logo.png": "/Bikeinfo/static/media/bike_logo.a9a93922634933115684.png",
+    "static/media/default_bike.png": "/Bikeinfo/static/media/default_bike.90268572e157625ea45c.png",
     "index.html": "/Bikeinfo/index.html",
-    "main.f3d092e1.css.map": "/Bikeinfo/static/css/main.f3d092e1.css.map",
-    "main.9c36dd0c.js.map": "/Bikeinfo/static/js/main.9c36dd0c.js.map"
+    "main.9f1940a2.css.map": "/Bikeinfo/static/css/main.9f1940a2.css.map",
+    "main.691d0376.js.map": "/Bikeinfo/static/js/main.691d0376.js.map"
   },
   "entrypoints": [
-    "static/css/main.f3d092e1.css",
-    "static/js/main.9c36dd0c.js"
+    "static/css/main.9f1940a2.css",
+    "static/js/main.691d0376.js"
   ]
 }
