@@ -15,7 +15,7 @@
 
 .filter_heading {
   border-right: 1px solid coral;
-  padding: 2px 10px;
+  padding: 0px 10px;
   color: #294057;
 }
 
@@ -30,7 +30,7 @@
 .filter_title > label,
 .filter_date > label {
   font-weight: 500;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .filter_title > input,

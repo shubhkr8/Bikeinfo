@@ -1,16 +1,20 @@
 import { Button } from "@mui/material";
-import React, { FC, useState, useContext } from "react";
+import { FC, useState, useContext } from "react";
 import "./Filter.css";
 import { UserContext } from "../../App";
 
 const Filter: FC = () => {
-  const { bikeData, setNewBikeData } = useContext(UserContext);
+  const { bikeData, setNewBikeData, setShowNoData } = useContext(UserContext);
   const [searchTitle, setSearchTitle] = useState("");
-  const [fromDate, setFromDate] = useState<any>();
-  const [toDate, setToDate] = useState<any>();
+  const [fromDate, setFromDate] = useState<any>("");
+  const [toDate, setToDate] = useState<any>("");
+  const fliterenable =
+    searchTitle.length === 0 && (fromDate.length === 0 || toDate.length === 0);
+  console.log(fliterenable);
 
   const handleSearchTitle = () => {
     setNewBikeData(bikeData);
+    setShowNoData(true);
     let newfromdate = Date.parse(fromDate);
     let newtodate = Date.parse(toDate);
     const filterbikedata = bikeData.filter((e: any) => {
@@ -78,7 +82,12 @@ const Filter: FC = () => {
           </div>
         </div>
         <div className="filter_submit">
-          <Button size="small" variant="outlined" onClick={handleSearchTitle}>
+          <Button
+            size="medium"
+            variant="outlined"
+            onClick={handleSearchTitle}
+            disabled={fliterenable}
+          >
             Filter
           </Button>
         </div>

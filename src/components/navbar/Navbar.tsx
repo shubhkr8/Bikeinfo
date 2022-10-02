@@ -18,9 +18,11 @@ const Navbar: FC = () => {
     setInputLocation,
     setInputMiles,
     setShowCount,
+    setShowNoData,
   } = useContext(UserContext);
 
   const handleSearch = () => {
+    setShowNoData(false);
     if (Number(miles) <= 0) {
       alert("Please Enter Miles Value Greater than 0");
     } else {

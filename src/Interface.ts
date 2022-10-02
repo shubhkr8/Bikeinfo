@@ -21,6 +21,8 @@ export interface AppContextInterface {
   setShowCount?: (x: boolean) => void;
   showLoader?: boolean;
   setShowLoader?: (x: boolean) => void;
+  showNoData?: boolean;
+  setShowNoData?: (x: boolean) => void;
   getData?: () => void;
   getCount?: () => void;
 }

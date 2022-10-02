@@ -12,6 +12,7 @@ const App: FC = () => {
   const [inputLocation, setInputLocation] = useState("IP");
   const [inputMiles, setInputMiles] = useState(200);
   const [newBikeData, setNewBikeData] = useState([]);
+  const [showNoData, setShowNoData] = useState(false);
   const [totalCount, setTotalCount] = useState(0);
   const [showCount, setShowCount] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
@@ -81,6 +82,8 @@ const App: FC = () => {
         getCount,
         showApiError,
         apiError,
+        showNoData,
+        setShowNoData,
       }}
     >
       <Home />

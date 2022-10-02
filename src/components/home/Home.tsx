@@ -20,6 +20,7 @@ const Home: FC = () => {
     getCount,
     showLoader,
     showApiError,
+    showNoData,
   } = useContext(UserContext);
   useEffect(() => {
     getData();
@@ -65,9 +66,15 @@ const Home: FC = () => {
                   <Stolenbikes />
                 </>
               ) : (
-                <div className="no_bikedata">
-                  <h1>No Data Available For Given Input</h1>
-                </div>
+                <>
+                  {showNoData ? (
+                    <div className="no_bikedata">
+                      <h1>No Data Available For Given Input</h1>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </>
               )}
             </div>
           )}
