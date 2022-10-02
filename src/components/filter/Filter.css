@@ -30,7 +30,7 @@
 .filter_title > label,
 .filter_date > label {
   font-weight: 500;
-  margin: 8px 0;
+  margin-bottom: 8px;
 }
 
 .filter_title > input,

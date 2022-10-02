@@ -86,17 +86,17 @@ const Bikes: FC<Props> = ({
           </div>
           <div>
             <p>
-              <span className="bike_tag">Location: </span>{" "}
-              <span>
+              <div className="bike_location">
+                <span className="bike_tag">Location: </span>
                 {location ? (
                   <>
                     {location}
-                    <LocationOnIcon />
+                    <LocationOnIcon fontSize="small" />
                   </>
                 ) : (
-                  "Unknown"
+                  ` Unkown`
                 )}
-              </span>
+              </div>
             </p>
             <p>
               <span className="bike_tag">Stolen Date:</span>
@@ -133,15 +133,15 @@ const Bikes: FC<Props> = ({
               {displaysdate}
             </div>
           </div>
-          <div className="modal_location">
-            <span>Location : </span>
+          <div className="bike_location">
+            <span>Location: </span>
             {location ? (
               <>
                 {location}
                 <LocationOnIcon fontSize="small" />
               </>
             ) : (
-              ` Not Availabale`
+              ` Unkown`
             )}
           </div>
         </Box>
