@@ -52,12 +52,15 @@ const Home: FC = () => {
                       ) : (
                         <>
                           {totalCount} bikes stolen within {inputMiles} miles of
-                          your location
+                          Your Location
                         </>
                       )}
                     </div>
                   ) : (
-                    <h3>{totalCount} Bikes Stolen</h3>
+                    <div className="count_container">
+                      {totalCount} bikes stolen within {inputMiles} miles of
+                      given Location
+                    </div>
                   )}
                   <Stolenbikes />
                 </>

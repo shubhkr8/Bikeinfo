@@ -26,7 +26,7 @@ const Navbar: FC = () => {
     } else {
       setInputMiles(miles);
       setInputLocation(location);
-      setShowCount(true);
+
       setApiDataParam({
         ...apiDataParam,
         location: location,
@@ -38,6 +38,7 @@ const Navbar: FC = () => {
         distance: miles,
       });
       setLocation("");
+      setShowCount(true);
     }
   };
 

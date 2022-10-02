@@ -16,6 +16,7 @@
   width: 150px;
   height: 150px;
   margin-right: 30px;
+  border-radius: 5px;
 }
 .bike_body {
   flex: 1;
@@ -61,15 +62,26 @@
   display: flex;
   align-items: center;
 }
+
 .modal_conatiner {
   display: flex;
   flex-direction: column;
+  background-image: linear-gradient(
+    to right top,
+    #86a8e7,
+    #7cbdee,
+    #82d0ef,
+    #97e1ed,
+    #b4f0ec
+  );
+  border-radius: 10px;
 }
 
 .modal_img {
+  object-fit: contain;
   margin: auto;
-  width: 90%;
   height: 250px;
+  border-radius: 8px;
 }
 
 .modal_title {

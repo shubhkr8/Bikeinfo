@@ -52,7 +52,7 @@ const App: FC = () => {
         setTotalCount(response.data.proximity);
       })
       .catch((err: any) => {
-        console.log(err);
+        setApiError(err.message);
       });
   };
 
