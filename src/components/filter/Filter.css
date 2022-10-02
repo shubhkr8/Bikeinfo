@@ -1,5 +1,5 @@
 .filter {
-  background-color: white;
+  background-color: rgb(250, 250, 250, 0.7);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +38,7 @@
 .from_date > input {
   outline: none;
   border: none;
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   height: 1.5rem;
   box-shadow: inset 0px 0px 1px grey;
   border-radius: 3px;
@@ -53,7 +53,6 @@
 
 .filter_date_container {
   display: flex;
-  color: black;
 }
 
 .filter_submit {
@@ -66,13 +65,21 @@
 }
 .from_date > label,
 .to_date > label {
+  width: fit-content;
   font-size: 0.7rem;
   position: absolute;
   font-weight: bold;
   top: -8px;
   left: 4px;
-  padding: 0 4px;
-  background-color: white;
+  background-image: linear-gradient(
+    to top,
+    #ffffff,
+    #f8f9fe,
+    #eef4fc,
+    #e2f0fa,
+    #d5ecf6
+  );
+  border-radius: 5px;
 }
 
 .from_date {

@@ -1,10 +1,9 @@
 .loader {
-  display: flex;
-  justify-content: center;
-  margin-top: 80px;
+  height: 85vh;
 }
 
 .loader_img {
   object-fit: contain;
   width: 40px;
+  margin-top: 25vh;
 }

@@ -1,14 +1,13 @@
 import { FC, useContext } from "react";
 import Bikes from "./Bikes";
 import { UserContext } from "../../App";
-import Filter from "../filter/Filter";
 import Paginations from "../pagination/Paginations";
 import "./Stolenbikes.css";
 
 const Stolenbikes: FC = () => {
   const { newBikeData } = useContext(UserContext);
   return (
-    <div className="conatiner">
+    <>
       {newBikeData.map((item: any) => {
         return (
           <Bikes
@@ -18,13 +17,15 @@ const Stolenbikes: FC = () => {
             location={item.stolen_location}
             stolenDate={item.date_stolen}
             thumb={item.thumb}
+            serial={item.serial}
+            frame_colors={item.frame_colors}
           />
         );
       })}
       <div className="paginations">
         <Paginations />
       </div>
-    </div>
+    </>
   );
 };
 

@@ -2,9 +2,16 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: white;
+  background-image: linear-gradient(
+    to right top,
+    #86a8e7,
+    #7cbdee,
+    #82d0ef,
+    #97e1ed,
+    #b4f0ec
+  );
   width: 100%;
-  height: 80px;
+  height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
