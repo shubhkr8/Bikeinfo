@@ -86,7 +86,7 @@ const Bikes: FC<Props> = ({
           </div>
           <div>
             <p>
-              <div className="bike_location">
+              <span className="bike_location">
                 <span className="bike_tag">Location: </span>
                 {location ? (
                   <>
@@ -96,7 +96,7 @@ const Bikes: FC<Props> = ({
                 ) : (
                   ` Unkown`
                 )}
-              </div>
+              </span>
             </p>
             <p>
               <span className="bike_tag">Stolen Date:</span>

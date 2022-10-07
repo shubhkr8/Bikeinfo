@@ -10,8 +10,6 @@ const Filter: FC = () => {
   const [toDate, setToDate] = useState<any>("");
   const fliterenable =
     searchTitle.length === 0 && (fromDate.length === 0 || toDate.length === 0);
-  console.log(fliterenable);
-
   const handleSearchTitle = () => {
     setNewBikeData(bikeData);
     setShowNoData(true);

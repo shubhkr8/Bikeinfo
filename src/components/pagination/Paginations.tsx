@@ -37,7 +37,7 @@ const Paginations: FC = () => {
     <div className="pagination_container">
       <Stack spacing={2}>
         <Pagination
-          count={Math.ceil(totalCount / 10)}
+          count={totalCount ? Math.ceil(totalCount / 10) : 1}
           page={page}
           onChange={handlePageClick}
         />
